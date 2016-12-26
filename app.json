@@ -1,0 +1,18 @@
+{
+  "pages":[
+    "Ubike/index/index",
+    "Ubike/logs/logs",
+    "Ubike/umap/umap"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#000",
+    "navigationBarTitleText": "优拜单车",
+    "navigationBarTextStyle":"white"
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

@@ -1,0 +1,57 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+page {
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.slide-img {
+  width: 100%;
+}
+
+.myModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-color: #434343;
+}
+
+button.search {
+  background-color: #5bc0de;
+  color: #fff;
+}
+
+button.search:active {
+  background-color: #46b8da;
+}
+
+.index-map {
+  width: 100%;
+  height: 100%;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+
+.usermotto {
+  margin-top: 200px;
+}

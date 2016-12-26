@@ -1,0 +1,13 @@
+<!--index.wxml-->
+
+<!--<image class='slide-img' src="../images/slide_1.jpg"></image>-->
+
+<image class='slide-img' src="../images/slide_1.jpg"></image>
+<view class="fp page__bd page__bd_spacing" style="margin-top:35px">
+   <button class="search" type="button" bindtap="getlocation"  markers="{{markers}}">周边的车1</button>  
+   <button class="weui-btn" bindtap="scan" type="primary">扫描解锁</button>  
+   <button class="weui-btn" bindtap="manully" type="default">人工解锁</button>
+</view>
+<view wx:if="{{isShow}}" class='myModal' bindtap="manully">
+
+</view>
