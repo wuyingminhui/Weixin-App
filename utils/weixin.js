@@ -17,6 +17,41 @@ function weinxinLogin () {
   });  
 }
 
+function checkLogin () {
+  wx.checkSession({
+    success: function(){
+    },
+    fail: function(){
+      weinxinLogin()
+    }
+  })
+}
+
+function getUser () {
+  wx.getUserInfo({
+    success: function(res) {
+      console.log(res)
+    }
+  })
+}
+
+function setSync () {
+  try {
+    wx.setStorageSync('jason', 'woo')
+  } catch (e) {    
+  }
+}
+
+function getSync () {
+  try {
+    return wx.getStorageSync('jason')
+  } catch (e) {    
+  }
+}
+
 module.exports = {
-  weinxinLogin: weinxinLogin
+  weinxinLogin: weinxinLogin,
+  setSync: setSync,
+  getSync: getSync,
+  getUser: getUser
 }

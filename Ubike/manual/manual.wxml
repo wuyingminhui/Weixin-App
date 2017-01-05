@@ -1,0 +1,21 @@
+<view class='myModal'>
+    <view class='myinput'>
+        <input id='0' class="longS" type="number" focus="{{index==0}}" maxlength="1" bindinput="inpp"></input>
+        <input id='1' class="longS" type="number" focus="{{index==1}}" maxlength="1" bindinput="inpp"></input>
+        <input id='2' class="longS" type="number" focus="{{index==2}}" maxlength="1" bindinput="inpp"></input>
+        <input id='3' class="longS" type="number" focus="{{index==3}}" maxlength="1" bindinput="inpp"></input>
+        <input id='4' class="longS" type="number" focus="{{index==4}}" maxlength="1" bindinput="inpp"></input>
+        <input id='5' class="longS" type="number" focus="{{index==5}}" maxlength="1" bindinput="inpp"></input>
+        <input id='6' class="longS" type="number" focus="{{index==6}}" maxlength="1" bindinput="inpp"></input>
+        <input id='7' class="longS" type="number" focus="{{index==7}}" maxlength="1" bindinput="inpp"></input>
+        <input id='8' class="longS" type="number" focus="{{index==8}}" maxlength="1" bindinput="inpp"></input>
+        <input id='9' class="longS" type="number" focus="{{index==9}}" maxlength="1" bindinput="inpp"></input>
+        <input  id='10' class="longS" type="number" focus="{{index==10}}" maxlength="1" bindinput="inpp"></input>
+    </view>
+    <view class='tit'>
+        <text>请输入正确的车辆编号</text>
+    </view>
+    <view class='post1'>
+        <button class="weui-btn post" bindtap="manully" type="default">确定</button>
+    </view>
+</view>

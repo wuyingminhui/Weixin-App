@@ -1,0 +1,57 @@
+.myModal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.8);
+}
+
+.longS {
+  width: 22px;
+  height: 60px;
+  background-color: rgba(0,229,135,0.4);
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin: 0px 3px;
+}
+
+.myinput {
+    background-color: transparent;
+    margin-top: 30%;
+    width: 100%;
+    text-align: center;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    align-content: center;
+}
+
+.tit {
+    width: 100%;
+    text-align: center;
+    color:rgba(172,171,179,1);
+}
+
+.post {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: rgba(196,242,223,1);
+    color: rgba(172,171,179,1);
+}
+
+.post1 {
+    margin-top: 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}

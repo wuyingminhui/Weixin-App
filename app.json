@@ -2,6 +2,7 @@
   "pages":[
     "Ubike/index/index",
     "Ubike/logs/logs",
+    "Ubike/manual/manual",
     "Ubike/umap/umap"
   ],
   "window":{

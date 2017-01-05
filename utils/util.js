@@ -16,6 +16,20 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
+function getScreen() {
+  var windowWidth, windowHeight
+  wx.getSystemInfo({  
+    success: function (res) {  
+      windowWidth = res.windowWidth;  
+      windowHeight = res.windowHeight;  
+    }  
+  })
+  console.log(windowWidth)
+  console.log(windowHeight)
+  return [windowWidth, windowHeight]
+}
+
 module.exports = {
+  getScreen: getScreen,
   formatTime: formatTime
 }
