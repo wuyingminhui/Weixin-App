@@ -1,0 +1,4 @@
+/* Ubike/settings/settings.wxss */
+.btn-block{
+    padding: 0 20rpx
+}

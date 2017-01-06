@@ -3,7 +3,10 @@
     "Ubike/index/index",
     "Ubike/logs/logs",
     "Ubike/manual/manual",
-    "Ubike/umap/umap"
+    "Ubike/umap/umap",
+    "Ubike/recharge/recharge",
+    "Ubike/profile/profile",
+    "Ubike/settings/settings"
   ],
   "window":{
     "backgroundTextStyle":"light",

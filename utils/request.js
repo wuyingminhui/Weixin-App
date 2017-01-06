@@ -15,7 +15,7 @@ function request(options) {
     method: method,
     header: {
         'content-type': 'application/json',
-        'X-TOKEN': 'qXlqKcpqDXagWiTERVqm1j/a6Fye48q5Q7Nr8XcFi8s='
+        'X-TOKEN': 'RFdVNn8ksZjGhi0Sd6Vykx+t1IMj/SRyrVPhu9TGYGo='
     },
     success: success,
     fail: error,

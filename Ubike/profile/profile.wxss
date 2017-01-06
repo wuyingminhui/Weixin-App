@@ -1,0 +1,50 @@
+.header {
+    position: relative;
+    background-color: #eee;
+    width: 100%;
+}
+.header .bg {
+    width: 100%;
+    display: block;
+}
+.header .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0px;
+  top: 0px;
+  text-align:center;
+}
+.header .overlay .avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+  border: 0;
+  background-color: #fff;
+  margin-top: 10%;
+}
+.header .overlay .name {
+  font-size: 36rpx;
+  text-align: center;
+}
+.balance-info {
+  height: 340rpx;
+  background-color: #fff;
+  padding: 10rpx 30rpx;
+}
+.balance-info .title {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+.balance-info .amount {
+  text-align: center;
+  font-size: 80rpx;
+  color: #ff922a;
+  font-weight: 500;
+  margin-bottom: 20rpx;
+}
+.balance-info button {
+  display: block;
+  width: 300rpx;
+  margin: auto;
+}
