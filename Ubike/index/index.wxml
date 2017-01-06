@@ -15,9 +15,9 @@
         <view class="scan circle">
             <image class="iconI" src="../images/uguide.png"></image>
         </view>
-        <view class="scan circle">
+        <navigator class="scan circle" url="../profile/profile">
             <image class="iconI-me" src="../images/ume.png"></image>
-        </view>
+        </navigator>
     </view>
     <view class="mainlinetitle">
         <text class='title_content'>扫码开锁</text>

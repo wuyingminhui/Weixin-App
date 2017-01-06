@@ -1,0 +1,41 @@
+@import '../../style/weui.wxss';
+
+.container {
+    padding: 0;
+}
+.block-pd {
+    padding: 20rpx;
+    text-align: center;
+}
+.block-info {
+    font-size: 36rpx;
+}
+.block-text {
+    font-size: 34rpx;
+    font-weight: bold;
+}
+.center{
+    text-align: center;
+}
+.wx-input {
+    background: #fff;
+    height: 90rpx;
+}
+.weui-flex .weui-flex__item.weui-flex__item__mg{
+    margin-top: 24rpx;
+    margin-right: 30rpx;
+}
+.weui-flex .weui-flex__item .placeholder {
+    background-color: #fff;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    color: #000;
+}
+.weui-flex .weui-flex__item .placeholder.choose {
+    background-color: #00e587;
+    color:#fff;
+}
+.weui-flex .weui-flex__item.weui-flex__item__mg:last-child {
+    margin-right: 0;
+}

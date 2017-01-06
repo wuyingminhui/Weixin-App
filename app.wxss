@@ -45,3 +45,44 @@ page{
     text-align: left;
     font-size: 14px;
 }
+
+.lists__item{
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    background-color: #FFFFFF;
+    overflow: hidden;
+    border-radius: 4rpx;
+    cursor: pointer;
+}
+.list{
+    position: relative;
+    padding-top: 26rpx;
+    padding-bottom: 26rpx;
+    padding-left: 40rpx;
+    padding-right: 40rpx;
+}
+.list__arrow{
+    position: absolute;
+    top: 28rpx;
+    right: 44rpx;
+    width: 32rpx;
+    height: 32rpx;
+}
+.list__line{
+    content: " ";
+    position: absolute;
+    left: 40rpx;
+    top: 0;
+    right: 0;
+    height: 2rpx;
+    background-color: #F0F0F0;
+}
+.widget__line_first{
+    left: 0;
+    right: 0;
+    background-color: #D8D8D8;
+}
+.list__line.bottom{
+    top: inherit;
+    bottom: 0;
+}

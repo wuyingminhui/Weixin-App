@@ -26,5 +26,13 @@ App({
   },
   globalData:{
     userInfo:null
-  }
+  },
+  showLoading: function(title, duration){
+        wx.showToast({
+            title: title,
+            icon: 'loading',
+            duration: duration || 2000,
+            mask: true
+        })
+    },
 })

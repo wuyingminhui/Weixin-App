@@ -1,0 +1,16 @@
+<view class="page">
+    <view class="lists__item">
+        <view class="list" bindtap="refund">
+            <text class="list__name">退还押金</text>
+        </view>
+    </view>
+    <view class="btn-block">
+        <button type="primary" bindtap="exit">退出登录</button>
+    </view>
+    <modal class="modal" hidden="{{modalHidden}}" bindconfirm="confirmRefund" bindcancel="cancelRefund">
+      <view> 退还押金流程中将无法使用车辆, 确认要退还押金吗？</view>
+    </modal>
+    <modal class="modal" hidden="{{modalHidden2}}" bindconfirm="hide" no-cancel>
+      <view> {{modalMsg}}</view>
+    </modal>
+</view>

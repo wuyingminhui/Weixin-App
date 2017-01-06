@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="header">
+        <image src="../images/profile-bg.png" class="bg"></image>
+        <view class="overlay">
+            <image class="avatar" src="{{avatar}}"></image>
+            <view class="name">{{name}}</view>
+        </view>
+    </view>
+    <view class="as">
+        <view class="balance-info">
+            <view class="title">账户余额（元）</view>
+            <view class="amount">{{ balance }}</view>
+            <navigator url="../recharge/recharge">
+                <button class="solid recharge" type="primary">充值</button>
+            </navigator>
+        </view>
+    </view>
+    <view class="lists__item">
+        <navigator class="list" url="/Ubike/settings/settings">
+            <text class="list__name">个人设置</text>
+            <image src="../images/arrowright.png" mode="aspectFill" class="list__arrow"></image>
+            <!--<view class="list__line bottom"></view>-->
+        </navigator>
+    </view>
+</view>
