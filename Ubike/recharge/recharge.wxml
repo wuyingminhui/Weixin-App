@@ -1,0 +1,31 @@
+<page>
+    <view class="page">
+        <view class="block-pd">
+            <view class="block-info">可用余额</view>
+            <view class="block-text">¥ {{balance}}</view>
+            <view class="section">
+                <input class="wx-input" placeholder="请输入您要充值的金额" focus="true" auto-focus type="number" value="{{amount}}" bindinput="input"/>
+            </view>
+            <view class="weui-flex" wx:for="{{premoneies}}" wx:key="*this">
+                <view class="weui-flex__item weui-flex__item__mg" wx:for="{{item}}" wx:for-item="premoney" bindtap="choose" data-premoney="{{premoney}}" wx:key="*this">
+                    <view class="{{'placeholder ' + (amount == premoney ? 'choose' : '')}}">{{premoney}} 元</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells">
+            <view class="weui-cell">
+                <view class="weui-cell__hd">
+                    <image src="../images/icon-wechat-pay.png" style="width:20px;margin-right:5px;display:block;height:20px;"></image>
+                </view>
+                <view class="weui-cell__bd">
+                    <view>微信支付</view>
+                </view>
+                <view class="weui-cell__ft"><radio value="0" checked="true"/></view>
+            </view>
+        </view>
+        <view style="margin:50rpx 20rpx 0">
+        <button type="primary" loading="{{loading}}" 
+        disabled="{{loading || amount <= 0}}" bindtap="pay" > 确定 </button>
+        </view>
+    </view>
+</page>

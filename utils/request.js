@@ -2,6 +2,7 @@ function request(options) {
   // var domain = 'https://test'
   var path = options.path;
   var data = options.data;
+  console.log(data)
   var method = options.method || 'GET';
   // var m_domain = options.domain ? options.domain : domain
   var done = options.done || function() {};
@@ -13,10 +14,12 @@ function request(options) {
     data: data,
     method: method,
     header: {
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'X-TOKEN': 'qXlqKcpqDXagWiTERVqm1j/a6Fye48q5Q7Nr8XcFi8s='
     },
     success: success,
-    fail: error
+    fail: error,
+    complete: done
   })
 }
 
