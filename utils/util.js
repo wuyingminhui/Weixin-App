@@ -24,8 +24,6 @@ function getScreen() {
       windowHeight = res.windowHeight;  
     }  
   })
-  console.log(windowWidth)
-  console.log(windowHeight)
   return [windowWidth, windowHeight]
 }
 

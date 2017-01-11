@@ -6,7 +6,7 @@ function weinxinLogin () {
     success:function(res){
       console.log(res)
       var playload = {
-        path: 'https://testapi.ubike.cn/v1/wxpay/openids?code=' + res.code,
+        path: '/v1/wxpay/openids?code=' + res.code,
         success: function (data) {
           console.log(data)
         }

@@ -1,6 +1,7 @@
 {
   "pages":[
     "Ubike/index/index",
+    "Ubike/login/login",
     "Ubike/logs/logs",
     "Ubike/manual/manual",
     "Ubike/umap/umap"

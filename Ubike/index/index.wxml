@@ -2,35 +2,4 @@
 
 <!--<image class='slide-img' src="../images/slide_1.jpg"></image>-->
 
-<map id="myMap" show-location="true" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" scale="{{scale}}" style="width: 100%; height: {{height}}px" polyline="{{polyline}}" bindmarkertap="markerTap" class="mymap"></map>
-
-<view class="fp page__bd page__bd_spacing" style="padding-bottom: 0px;height: 100px">
-    <view class="mainline">
-        <view class="scan circle" bindtap="scan">
-            <image class="iconI" src="../images/uscan.png"></image>
-        </view>
-        <view class="scan circle" bindtap="manully">
-            <image class="iconI" src="../images/ufill.png"></image>
-        </view>
-        <view class="scan circle">
-            <image class="iconI" src="../images/uguide.png"></image>
-        </view>
-        <view class="scan circle">
-            <image class="iconI-me" src="../images/ume.png"></image>
-        </view>
-    </view>
-    <view class="mainlinetitle">
-        <text class='title_content'>扫码开锁</text>
-        <text class='title_content'>人工开锁</text>
-        <text class='title_content'>优拜指南</text>
-        <text class='title_content'>我的优拜</text>
-    </view>
-
-</view>
-
-
-<view wx:if="{{isShow}}" class='myModal' bindtap="manully">
-    <view class='inputNum' style="left: {{modal_left}}px">
-        <input class="iN" bindinput="bindKeyInput" placeholder="请输入车辆编号" focus="true"/>
-    </view>
-</view>
+<map id="myMap" show-location="true" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" scale="{{scale}}" style="width: 100%; height: {{height}}px" controls="{{controls}}" polyline="{{polyline}}" bindmarkertap="markerTap" class="mymap" bindcontroltap="controltap"></map>

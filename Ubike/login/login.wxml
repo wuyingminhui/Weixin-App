@@ -1,0 +1,25 @@
+<view class='login'>
+    <view class='inputLine'>
+        <view class='icon'>
+            <image class='iconImg' src="../images/account.png"></image>
+        </view>
+        <view class='myinput'>
+            <input type="number" focus="true" bindinput="inputPhone" maxlength="11" placeholder="请输入手机号"/>
+        </view>
+    </view>
+    <view class='inputLine'>
+        <view class='icon'>
+            <image class='iLine' class='iconImg' src="../images/vc.png"></image>
+        </view>
+        <view class='myinput'>
+            <input class='iLine' bindinput="inputVC" placeholder="请输入验证码" type="number" maxlength="4"/>
+        </view>
+        <button class='myvc' bindtap="getVC" disabled="{{vcdisabled}}">
+            {{VCText}}
+        </button>
+    </view>
+    <view class='loginB page__bd page__bd_spacing'>
+        <button type="primary" class="mybutton"
+        disabled="{{disabled}}" bindtap="signUp"> 确 定 </button>
+    </view>
+</view>

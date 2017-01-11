@@ -1,14 +1,16 @@
 var weixin = require('../../utils/weixin.js')
 var util = require('../../utils/util.js')
 var request = require('../../utils/request.js')
+var user = require('../../utils/user.js')
 
 //index.js  
 //获取应用实例  
 var app = getApp()  
 Page({
   data: {
-    isShow: false,
-    modal_left: 0,
+    isLogin: false,
+    screenWidth: 0,
+    screenHeight: 0,
     navWidth: 0,
     height: 0,
     latitude: 0,//纬度 
@@ -20,25 +22,173 @@ Page({
     wantedLine: false,
     allMarkers: [],
     polyline: [],
+    controls: [],
     circles: [{radius: 2000}],
-    scale: 16
+    scale: 17
   },
   onLoad: function(option) {
-    console.log('onLoad')
-    console.log(option)
     weixin.weinxinLogin()
     weixin.getUser()
-    console.log(weixin.getSync())
     this.getumap()
   },
   onReady: function () {  
-    console.log('onReady')
     var screen = util.getScreen()
+    this.mapCtx = wx.createMapContext('myMap')
     this.setData({
       navWidth : screen[0] - 20,
-      height: screen[1] - 100
+      screenWidth: screen[0],
+      screenHeight: screen[1],
+      height: screen[1] + 30
     })
-  },  
+    if (user.isLogin()) {
+      this.setData({
+        controls: [{
+          id: 1,
+          iconPath: '../images/scan_1.png',
+          position: {
+            left: screen[0] / 2 - 81,
+            top: screen[1] - 50,
+            width: 98,
+            height: 37
+          },
+          clickable: true
+        },
+        {
+          id: 2,
+          iconPath: '../images/man_1.png',
+          position: {
+            left: screen[0] / 2 + 17,
+            top: screen[1] - 50,
+            width: 64,
+            height: 37
+          },
+          clickable: true
+        },{
+          id: 100,
+          iconPath: '../images/loc.png',
+          position: {
+            left: 10,
+            top: screen[1] - 50,
+            width: 37,
+            height: 37
+          },
+          clickable: true
+        }]
+      })
+    } else {
+      this.setData({
+        controls: [{
+          id: 1000,
+          iconPath: '../images/login.png',
+          position: {
+            left: screen[0] / 2 - 81,
+            top: screen[1] - 50,
+            width: 162,
+            height: 37
+          },
+          clickable: true
+        },{
+          id: 100,
+          iconPath: '../images/loc.png',
+          position: {
+            left: 10,
+            top: screen[1] - 50,
+            width: 37,
+            height: 37
+          },
+          clickable: true
+        }]
+      })
+    }
+  },
+  controltap(e) {
+    if (e.controlId === 1) {
+      this.scan()
+    } else if (e.controlId === 2) {
+      this.setData({
+        controls: [{
+          id: 3,
+          iconPath: '../images/scan_2.png',
+          position: {
+            left: this.data.screenWidth / 2 - 81,
+            top: this.data.screenHeight - 50,
+            width: 98,
+            height: 37
+          },
+          clickable: true
+        },
+        {
+          id: 4,
+          iconPath: '../images/man_2.png',
+          position: {
+            left: this.data.screenWidth / 2 + 17,
+            top: this.data.screenHeight - 50,
+            width: 64,
+            height: 37
+          },
+          clickable: true
+        },{
+          id: 100,
+          iconPath: '../images/loc.png',
+          position: {
+            left: 10,
+            top: this.data.screenHeight - 50,
+            width: 37,
+            height: 37
+          },
+          clickable: true
+        }]
+      })
+      this.manully()
+    } else if (e.controlId === 3) {
+      this.setData({
+        controls: [{
+          id: 1,
+          iconPath: '../images/scan_1.png',
+          position: {
+            left: this.data.screenWidth / 2 - 81,
+            top: this.data.screenHeight - 50,
+            width: 98,
+            height: 37
+          },
+          clickable: true
+        },
+        {
+          id: 2,
+          iconPath: '../images/man_1.png',
+          position: {
+            left: this.data.screenWidth / 2 + 17,
+            top: this.data.screenHeight - 50,
+            width: 64,
+            height: 37
+          },
+          clickable: true
+        },{
+          id: 100,
+          iconPath: '../images/loc.png',
+          position: {
+            left: 10,
+            top: this.data.screenHeight - 50,
+            width: 37,
+            height: 37
+          },
+          clickable: true
+        }]
+      })
+      this.scan()
+    } else if (e.controlId === 4) {
+      this.manully()
+    } else if (e.controlId === 100) {
+      this.moveToLocation()
+    } else if (e.controlId === 1000) {
+      wx.navigateTo({
+        url: '../login/login'
+      })
+    }
+  },
+  moveToLocation: function () {
+    this.mapCtx.moveToLocation()
+  },
   getlocation: function () { 
     wx.navigateTo({
       url: '../umap/umap'
@@ -50,9 +200,10 @@ Page({
         console.log(res)
       }
     })
-  },
-  submitE: function(e) {
-    console.log('form发生了submit事件，携带数据为：', e.detail.formId)
+    // user.deleteUser()
+    // wx.redirectTo({
+    //     url: '../index/index'
+    // })
   },
   manully: function () {
     wx.navigateTo({
@@ -92,7 +243,8 @@ Page({
   getbikes: function (lon, lat, r) {
     var that = this
     var playload = {
-    path: 'https://searchprod.ubike.cn/v1/lockw/search?lon='+ lon +'&lat=' + lat + '&r=' + r,
+    path: '/v1/lockw/search?lon='+ lon +'&lat=' + lat + '&r=' + r,
+    domain: 'https://searchprod.ubike.cn',
     success: function (data) {
         console.log(data)
         var bikes
@@ -126,5 +278,10 @@ Page({
     }
   }
   request.request(playload)
-  }
+  },
+
+
+  submitE: function(e) {
+    console.log('form发生了submit事件，携带数据为：', e.detail.formId)
+  },
 })  

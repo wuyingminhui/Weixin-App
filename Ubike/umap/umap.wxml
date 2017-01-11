@@ -2,4 +2,4 @@
 
 <!--<image class='slide-img' src="../images/slide_1.jpg"></image>-->
 
-<map id="myMap" show-location longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" scale="{{scale}}" style="width: 100%; height: 100%"></map>
+<map id="myMap" show-location="true" longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" scale="{{scale}}" style="width: 100%; height: 100%" polyline="{{polyline}}" bindmarkertap="markerTap"></map>

@@ -112,6 +112,7 @@ button.search:active {
 
 .mymap {
   z-index: 2;
+  overflow: hidden;
 }
 
 .userinfo-avatar {
