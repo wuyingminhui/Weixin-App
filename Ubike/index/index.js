@@ -24,7 +24,7 @@ Page({
     polyline: [],
     controls: [],
     circles: [{radius: 2000}],
-    scale: 17
+    scale: 18
   },
   onLoad: function(option) {
     weixin.weinxinLogin()
@@ -227,16 +227,16 @@ Page({
         var longitude = res.longitude  
         var speed = res.speed  
         var accuracy = res.accuracy
-        // that.setData({
-        //   latitude: latitude,
-        //   longitude: longitude
-        // })
-        // that.getbikes(longitude, latitude, 2000)
         that.setData({
-          latitude: 31.2178571401916,
-          longitude: 121.418047114414
+          latitude: latitude,
+          longitude: longitude
         })
-        that.getbikes(121.418047114414, 31.2178571401916, 2000)
+        that.getbikes(longitude, latitude, 2000)
+        // that.setData({
+        //   latitude: 31.2178571401916,
+        //   longitude: 121.418047114414
+        // })
+        // that.getbikes(121.418047114414, 31.2178571401916, 2000)
       }  
     })
   },
