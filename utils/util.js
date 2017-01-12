@@ -27,7 +27,41 @@ function getScreen() {
   return [windowWidth, windowHeight]
 }
 
+var animation = wx.createAnimation({
+  transformOrigin: "50% 50%",
+  duration: 1000,
+  timingFunction: "ease",
+  delay: 0
+})
+
+var r = {
+    protocol: /([^\/]+:)\/\/(.*)/i,
+    host: /(^[^\:\/]+)((?:\/|:|$)?.*)/,
+    port: /\:?([^\/]*)(\/?.*)/,
+    pathname: /([^\?#]+)(\??[^#]*)(#?.*)/
+};
+
+function parseUrl(url) {
+    var tmp, res = {};
+    res["href"] = url;
+    for (var p in r) {
+        tmp = r[p].exec(url);
+        res[p] = tmp[1];
+        url = tmp[2];
+        if (url === "") {
+            url = "/";
+        }
+        if (p === "pathname") {
+            res["pathname"] = tmp[1];
+            res["search"] = tmp[2];
+            res["hash"] = tmp[3];
+        }
+    }
+    return res;
+};
+
 module.exports = {
   getScreen: getScreen,
-  formatTime: formatTime
+  formatTime: formatTime,
+  parseUrl: parseUrl
 }

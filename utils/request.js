@@ -7,17 +7,31 @@ function request(options) {
   var done = options.done || function() {};
   var success = options.success || function() {};
   var error = options.error || function() {};
-  console.log(path)
-  wx.request({
-    url: m_domain + path, //仅为示例，并非真实的接口地址
-    data: data,
-    method: method,
-    header: {
-        'content-type': 'application/json'
-    },
-    success: success,
-    fail: error
-  })
+  var withToken = false
+  if (options.header) {
+    withToken = true
+  }
+  if (withToken) {
+    wx.request({
+      url: m_domain + path, //仅为示例，并非真实的接口地址
+      data: data,
+      header: options.header,
+      method: method,
+      success: success,
+      fail: error
+    })
+  } else {
+    wx.request({
+      url: m_domain + path, //仅为示例，并非真实的接口地址
+      data: data,
+      method: method,
+      header: {
+          'content-type': 'application/json'
+      },
+      success: success,
+      fail: error
+    })
+  }
 }
 
 module.exports = {

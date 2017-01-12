@@ -44,9 +44,23 @@ function setToken (data) {
     }
 }
 
+function getToken (data) {
+    try {
+        var value = wx.getStorageSync('Ubike_User_Token')
+        if (value) {
+            return value
+        } else {
+            return null
+        }
+    } catch (e) {
+        return null
+    }
+}
+
 module.exports = {
   isLogin: isLogin,
   setUser: setUser,
   setToken: setToken,
+  getToken: getToken,
   deleteUser: deleteUser
 }
