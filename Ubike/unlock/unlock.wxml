@@ -1,4 +1,4 @@
-<view animation="{{animationData}}" class="outerSide">
+<view animation="{{animationData}}" class="outerSide" style="background-color: {{myColor}}">
 </view>
 
 <view class="process-inner">
@@ -10,6 +10,9 @@
 </view>
 
 
-<view class="cover">
-  {{showText}}
+<view class="cover" style="color: {{myColor}}">
+  <text>{{showText}}</text>
+  <button type="primary" class="mybutton"
+        wx:if="{{showButton}}" bindtap="back"> 确定 </button>
 </view>
+
