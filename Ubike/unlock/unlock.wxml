@@ -1,0 +1,15 @@
+<view animation="{{animationData}}" class="outerSide">
+</view>
+
+<view class="process-inner">
+</view>
+
+<view animation="{{animationData}}">
+<image src="../images/share_icon.png" class="process-inner-img">
+</image>
+</view>
+
+
+<view class="cover">
+  {{showText}}
+</view>
