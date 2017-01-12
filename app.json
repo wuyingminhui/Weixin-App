@@ -1,10 +1,11 @@
 {
   "pages":[
+    
     "Ubike/index/index",
-    "Ubike/login/login",
-    "Ubike/logs/logs",
+    "Ubike/unlock/unlock",
     "Ubike/manual/manual",
-    "Ubike/umap/umap"
+    "Ubike/login/login",
+    "Ubike/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -13,7 +14,7 @@
     "navigationBarTextStyle":"white"
   },
   "networkTimeout": {
-    "request": 10000,
+    "request": 30000,
     "downloadFile": 10000
   },
   "debug": true

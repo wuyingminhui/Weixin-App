@@ -40,7 +40,7 @@ Page({
       screenHeight: screen[1],
       height: screen[1] + 30
     })
-    if (user.isLogin()) {
+    if (user.isLogin() && user.getToken()) {
       this.setData({
         controls: [{
           id: 1,
@@ -197,14 +197,19 @@ Page({
   scan: function () {
     wx.scanCode({
       success: (res) => {
-        console.log(res)
+        if (res.result) {
+          var s = util.parseUrl(res.result).host.split('.')
+          s.pop()
+          if (s.pop() === 'ubike') {
+            wx.navigateTo({
+                url: '../unlock/unlock?bn=' + util.parseUrl(res.result).pathname.split('=')[1]
+            })
+          }
+        }
       }
     })
-    // user.deleteUser()
-    // wx.redirectTo({
-    //     url: '../index/index'
-    // })
   },
+  
   manully: function () {
     wx.navigateTo({
       url: '../manual/manual'

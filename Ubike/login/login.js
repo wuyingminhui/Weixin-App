@@ -176,8 +176,8 @@ Page({
             if (data.data.code === 200) {
                 if (user.setUser(data.data.obj)) {
                     if (user.setToken(data.data.obj.token)) {
-                        wx.redirectTo({
-                            url: '../index/index'
+                        wx.navigateBack({
+                            delta: 1
                         })
                     }
                 }
