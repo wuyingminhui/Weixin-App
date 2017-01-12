@@ -16,6 +16,6 @@
         <text>请输入正确的车辆编号</text>
     </view>
     <view class='post1'>
-        <button class="weui-btn post" bindtap="manully" type="default">确定</button>
+        <button class="weui-btn post" bindtap="manully" type="default" disabled="{{enable}}">确定  </button>
     </view>
 </view>
